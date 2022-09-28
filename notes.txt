@@ -1,0 +1,19 @@
+styled-components benefits:
+scoped CSS
+nest
+no polyfills 
+able to use props
+const button = styled.button`` - tagged template literal
+
+imports:
+{} are for non-default imports
+
+using index.js as file:
+when importing a component from a folder, if named index.js, it will automatically imported.
+For example:
+import Component from './Component' is sufficient
+however, if the original index.js was instead something like test.js,
+you will need to import like this:
+import Component from './Component/test.js'
+however, a downside is that if you have large amounts of component folders with index.js, 
+it will get confusing when opening multiple of them 
