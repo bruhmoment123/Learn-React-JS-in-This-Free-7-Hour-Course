@@ -1,9 +1,11 @@
-timestamp:1:42:07
+timestamp:1:52:45
 
 react hooks allows for creating stateful components without class 
 useState Hook returns an array: the value of set, and the setter
 you can have as many as you want in a component
-NEVER directly mutate the state as it will not re-render the component
+NEVER directly mutate the state and instead give it new values as it will not re-render the component
+ALWAYS use the setter provided
+when a state is changed and re-rendered, only the stuff that has changed are re-rendered and not the whole page
 
 styled-components benefits:
 scoped CSS
@@ -42,3 +44,18 @@ Promise.race() is the same as .all() except it will return as soon as when one o
 it will only return one value 
 
 async:
+async follows the same principle as promises except that it makes things easier 
+wrap your function in an async 
+use await on any asynchronous function to actually return the responses or else it will only return the promises
+
+React mount:
+when elements are put into the DOM
+
+.env, depending on the scope of the app, is not refreshed as edits are made
+
+({}) -> returns an object in an inline function
+whereas {} returns a function in an inline function
+
+
+...object:
+called spreads, this syntax spreads the object
