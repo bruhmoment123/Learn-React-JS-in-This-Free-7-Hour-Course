@@ -1,3 +1,10 @@
+timestamp:1:32:24
+
+react hooks allows for creating stateful components without class 
+useState Hook returns an array: the value of set, and the setter
+you can have as many as you want in a component
+NEVER directly mutate the state as it will not re-render the component
+
 styled-components benefits:
 scoped CSS
 nest
