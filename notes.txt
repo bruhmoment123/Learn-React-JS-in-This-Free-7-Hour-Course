@@ -1,4 +1,4 @@
-timestamp:1:33:19
+timestamp:1:42:07
 
 react hooks allows for creating stateful components without class 
 useState Hook returns an array: the value of set, and the setter
@@ -24,3 +24,21 @@ you will need to import like this:
 import Component from './Component/test.js'
 however, a downside is that if you have large amounts of component folders with index.js, 
 it will get confusing when opening multiple of them 
+
+promise:
+https://www.youtube.com/watch?v=DHvZLI7Db8E&ab_channel=WebDevSimplified 
+https://www.youtube.com/watch?v=V_Kr9OSfDeU&ab_channel=WebDevSimplified 
+it was created as a means to replace callbacks
+a promise is exactly like it sounds
+you create a new promise object and it takes a function and passes two parameters: resolve and reject
+in the function you can create conditions for resolve and reject
+after that, you use the .then() method to say what happens when the promise is resolved
+the parameter or parameters it takes depends on the parameters you passed when the promise 
+is resolved in the promise object
+the same applies for when the promise is rejected except you use .catch() method 
+Promise.all() allows you to run all the promises in parallel which takes in a array of promises
+.then() returns an array of all of whatever the resolved returns arej
+Promise.race() is the same as .all() except it will return as soon as when one of is completed
+it will only return one value 
+
+async:

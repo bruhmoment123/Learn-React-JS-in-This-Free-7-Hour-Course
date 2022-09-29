@@ -1,8 +1,11 @@
-import React,{ useState} from 'react';
+import React,{ useState,useEffect} from 'react';
 
 import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config';
 
 import NoImages from '../images/no_image.jpg';
+
+
+
 
 const Home = () => {
     //state for holding movies
