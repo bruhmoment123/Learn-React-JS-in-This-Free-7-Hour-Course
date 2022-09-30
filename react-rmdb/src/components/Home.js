@@ -9,6 +9,8 @@ import NoImages from '../images/no_image.jpg';
 //Hook
 import {useHomeFetch} from '../hooks/useHomeFetch';
 
+//Components
+import HeroImage from './HeroImage'
 
 
 const Home = () => {
@@ -16,7 +18,21 @@ const Home = () => {
 
     console.log(state)
 
-    return<div>home page</div>
+    return (
+        //fragments: since you can only return one parent element in react, this can be
+        //used to arounnd the elements if a div cant be used to wrap around
+        <>
+        {state.results[0]? 
+        ( <HeroImage 
+        image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
+        title={state.results[0].original_title}
+        text={state.results[0].overview}
+        /> )
+        : null
+        }
+            
+        </>
+    );
 }
 
 export default Home;

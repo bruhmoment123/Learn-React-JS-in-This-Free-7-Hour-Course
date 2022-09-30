@@ -1,4 +1,4 @@
-timestamp:1:59:20
+timestamp:2:16:34
 
 react hooks allows for creating stateful components without class 
 useState Hook returns an array: the value of set, and the setter
@@ -6,6 +6,9 @@ you can have as many as you want in a component
 NEVER directly mutate the state and instead give it new values as it will not re-render the component
 ALWAYS use the setter provided
 when a state is changed and re-rendered, only the stuff that has changed are re-rendered and not the whole page
+
+Props can be sent to components to make it dynamic 
+props should never be changed in the component it is sent to
 
 styled-components benefits:
 scoped CSS
@@ -59,3 +62,9 @@ whereas {} returns a function in an inline function
 
 ...object:
 called spreads, this syntax spreads the object
+
+https://stackoverflow.com/questions/35440265/curly-brackets-in-arrow-functions 
+In an arrow function:
+{} -> The pair of braces forms a block, containing a list of statements. You need to use a return statement explicitly to make the function return something:
+({}) -> returns object
+() -> implicit return
