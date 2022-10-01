@@ -11,6 +11,7 @@ import {useHomeFetch} from '../hooks/useHomeFetch';
 
 //Components
 import HeroImage from './HeroImage'
+import Grid from './Grid'
 
 
 const Home = () => {
@@ -31,6 +32,12 @@ const Home = () => {
         : null
         }
             
+            <Grid header='Popular Movies'>
+                {state.results.map(movie=>(
+                    <div key={movie.id}>{movie.title}</div>
+                ))}
+            </Grid>
+
         </>
     );
 }
