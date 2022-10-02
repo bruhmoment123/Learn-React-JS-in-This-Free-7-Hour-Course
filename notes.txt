@@ -1,8 +1,8 @@
-timestamp:2:37:30
+timestamp:2:57:56
 
 react hooks allows for creating stateful components without class 
 useState Hook returns an array: the value of set, and the setter
-you can have as many as you want in a component
+you can have as many `as you want in a component
 NEVER directly mutate the state and instead give it new values as it will not re-render the component
 ALWAYS use the setter provided
 when a state is changed and re-rendered, only the stuff that has changed are re-rendered and not the whole page

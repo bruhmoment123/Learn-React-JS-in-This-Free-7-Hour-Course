@@ -13,10 +13,11 @@ const initialState = {
 }
 
 export const useHomeFetch = () => {
-    //state for holding moviesb
+    const [searchTerm,setSearchTerm] = useState('')
     const [state, setState] = useState(initialState);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+
 
     const fetchMovies = async (page, searchTerm = '') => {
         try{
@@ -45,5 +46,5 @@ export const useHomeFetch = () => {
     //array: dependencies for when the useEffect is triggered
     //when empty it will only run once
     
-    return {state,loading,error};
+    return {state,loading,error,setSearchTerm};
 }
