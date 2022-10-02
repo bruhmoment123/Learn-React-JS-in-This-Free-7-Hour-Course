@@ -15,9 +15,10 @@ import Grid from './Grid';
 import Thumb from './Thumb';
 import SearchBar from './SearchBar';
 import Spinner from './Spinner';
+import Button from './Button'
 
 const Home = () => {
-    const {state,loading, error,setSearchTerm} = useHomeFetch();
+    const {state,loading, error,setSearchTerm,searchTerm} = useHomeFetch();
     
 
     console.log(state)
@@ -26,7 +27,7 @@ const Home = () => {
         //fragments: since you can only return one parent element in react, this can be
         //used to arounnd the elements if a div cant be used to wrap around
         <>
-        {state.results[0]? 
+        {!searchTerm && state.results[0]? 
         ( <HeroImage 
         image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
         title={state.results[0].original_title}
@@ -35,7 +36,7 @@ const Home = () => {
         : null
         }
         <SearchBar setSearchTerm={setSearchTerm}/>
-            <Grid header='Popular Movies'>
+            <Grid header={searchTerm ? 'Search Result' : 'Popular Movies'}>
                 {state.results.map(movie=>(
                     <Thumb 
                     key={movie.id} 
@@ -50,7 +51,12 @@ const Home = () => {
                     />
                 ))}
             </Grid>
-            <Spinner/>
+            {loading && <Spinner/>}
+            {
+                state.page < state.total_pages && !loading && (
+                    <Button text='Load More'/>
+                )
+            }
         </>
     );
 }

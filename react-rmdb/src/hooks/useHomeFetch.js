@@ -39,12 +39,13 @@ export const useHomeFetch = () => {
     }
 
     
-    //initial render
+    //initial render and search
     useEffect(()=>{
-        fetchMovies(1)
-    },[])
+        setState(initialState);
+        fetchMovies(1,searchTerm);
+    },[searchTerm])
     //array: dependencies for when the useEffect is triggered
     //when empty it will only run once
     
-    return {state,loading,error,setSearchTerm};
+    return {state,loading,error,setSearchTerm,searchTerm};
 }
