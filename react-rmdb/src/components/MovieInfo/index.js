@@ -1,0 +1,1 @@
+import {Wrapper, Content,Text} from './MovieInfo.styles'
