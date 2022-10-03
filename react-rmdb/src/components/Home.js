@@ -18,10 +18,12 @@ import Spinner from './Spinner';
 import Button from './Button'
 
 const Home = () => {
-    const {state,loading, error,setSearchTerm,searchTerm} = useHomeFetch();
+    const {state,loading, error,setSearchTerm,searchTerm,setIsLoadingMore} = useHomeFetch();
     
 
     console.log(state)
+
+    if(error) return <div>Something went wrong...</div>
 
     return (
         //fragments: since you can only return one parent element in react, this can be
@@ -54,7 +56,8 @@ const Home = () => {
             {loading && <Spinner/>}
             {
                 state.page < state.total_pages && !loading && (
-                    <Button text='Load More'/>
+                    //it wont re-render anymore after a couple more times because react knows the same value is being given
+                    <Button text='Load More' callback={()=>setIsLoadingMore(true)}/>
                 )
             }
         </>
