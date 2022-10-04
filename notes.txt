@@ -1,4 +1,4 @@
-timestamp:4:00:04
+timestamp:4:37:42
 
 react hooks allows for creating stateful components without class 
 useState Hook returns an array: the value of set, and the setter
@@ -68,3 +68,10 @@ In an arrow function:
 {} -> The pair of braces forms a block, containing a list of statements. You need to use a return statement explicitly to make the function return something:
 ({}) -> returns object
 () -> implicit return
+
+reacttraining
+.env
+js function vs arrow function
+spread operator 
+clearTimeout
+PropTypes
