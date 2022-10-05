@@ -1,4 +1,4 @@
-timestamp:4:48:06
+timestamp:5:03:32
 
 react hooks allows for creating stateful components without class 
 useState Hook returns an array: the value of set, and the setter
@@ -75,3 +75,7 @@ js function vs arrow function
 spread operator 
 clearTimeout
 PropTypes
+
+
+Local Storage:persists until removing it yourself
+Session Storage:only persists over sessions 

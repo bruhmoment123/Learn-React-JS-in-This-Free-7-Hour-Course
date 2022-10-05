@@ -3,6 +3,9 @@ import {useState, useEffect} from 'react';
 //API
 import api from '../API';
 
+//helpers
+import {isPersistedState} from '../helpers';
+
 //initalState can be beneficial for whenever a reset is needed
 const initialState = {
     page:0,
@@ -42,6 +45,16 @@ export const useHomeFetch = () => {
     
     //initial render and search
     useEffect(()=>{
+        if(!searchTerm){
+            const sessionState = isPersistedState('homeState');
+
+            if(sessionState){
+                console.log("grabbing from sessionStorage")
+                setState(sessionState)
+                return;
+            }
+        }
+        console.log("grabbing from API")
         setState(initialState);
         fetchMovies(1,searchTerm);
     },[searchTerm])
@@ -56,6 +69,11 @@ export const useHomeFetch = () => {
         setIsLoadingMore(false);
     },
     [isLoadingMore,searchTerm,state.page])
+
+    //Write to session Storage
+    useEffect(()=>{
+        if(!searchTerm) sessionStorage.setItem('homeState',JSON.stringify(state))
+        },[searchTerm,state])
     
     return {state,loading,error,setSearchTerm,searchTerm,setIsLoadingMore};
 }
