@@ -1,4 +1,4 @@
-timestamp:5:13:50
+timestamp:5:40:40
 
 test
 
@@ -75,9 +75,12 @@ reacttraining
 .env
 js function vs arrow function
 spread operator 
-clearTimeout
+clearTimeout/setTimeout
 PropTypes
 
 
 Local Storage:persists until removing it yourself
 Session Storage:only persists over sessions 
+
+when setting state in a class component it will be automatically merged
+with the previous state unlike in functional components
