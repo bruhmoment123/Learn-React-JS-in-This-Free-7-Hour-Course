@@ -21,7 +21,24 @@ const Login =() =>{
     const navigate = useNavigate();
 
 
-    const handleSubmit = () => {}
+    const handleSubmit = async () => {
+        setError(false);
+        try{
+            const requestToken = await API.getRequestToken();
+            const sessionId = await API.authenticate(
+                requestToken,
+                username,
+                password
+            );
+            console.log(sessionId)
+            setUser({sessionId:sessionId.session_id,username});
+
+            navigate('/');
+        }
+        catch(err){
+            setError(true)
+        }
+    }
     const handleInput = e => {
         const name = e.currentTarget.name;
         const value = e.currentTarget.value;
@@ -34,6 +51,7 @@ const Login =() =>{
 
     return(
         <Wrapper>
+            {error && <div className="error">Error</div>}
             <label>Username:</label>
             <input 
                 type="text"
